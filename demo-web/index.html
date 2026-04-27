@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <title>spec-bridge Quiz Buzzer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Screen: Join -->
+    <div id="screen-join" class="screen active">
+      <div class="logo">
+        <h1>spec-bridge</h1>
+        <p class="tagline">Quiz Buzzer</p>
+      </div>
+      <form id="join-form" autocomplete="off">
+        <label for="room-code">Room Code</label>
+        <input
+          id="room-code"
+          type="text"
+          maxlength="4"
+          placeholder="ABCD"
+          pattern="[A-Za-z0-9]{4}"
+          required
+          autofocus
+        />
+        <label for="player-name">Your Name</label>
+        <input
+          id="player-name"
+          type="text"
+          maxlength="20"
+          placeholder="Enter your name"
+          required
+        />
+        <button type="submit" class="btn btn-primary">Join Quiz</button>
+        <p id="join-error" class="error hidden"></p>
+      </form>
+    </div>
+
+    <!-- Screen: Lobby -->
+    <div id="screen-lobby" class="screen">
+      <h2>You're in!</h2>
+      <div class="room-badge" id="lobby-room-code"></div>
+      <p class="lobby-msg">Waiting for the host to start the quiz...</p>
+      <div class="player-count">
+        <span id="lobby-player-count">1</span> player(s) connected
+      </div>
+    </div>
+
+    <!-- Screen: Loading -->
+    <div id="screen-loading" class="screen">
+      <div class="shimmer-container">
+        <div class="shimmer"></div>
+      </div>
+      <p id="loading-msg">Get ready...</p>
+    </div>
+
+    <!-- Screen: Question -->
+    <div id="screen-question" class="screen">
+      <div class="question-header">
+        <span id="q-number">1/10</span>
+        <div class="timer-bar">
+          <div id="timer-fill" class="timer-fill"></div>
+        </div>
+      </div>
+      <p id="q-text" class="question-text"></p>
+      <div id="q-choices" class="choices"></div>
+      <p id="q-feedback" class="feedback hidden"></p>
+    </div>
+
+    <!-- Screen: Result (between questions) -->
+    <div id="screen-result" class="screen">
+      <div id="result-icon" class="result-icon"></div>
+      <p id="result-msg" class="result-msg"></p>
+      <p id="result-score" class="result-score"></p>
+    </div>
+
+    <!-- Screen: Scoreboard -->
+    <div id="screen-scoreboard" class="screen">
+      <h2 id="scoreboard-title">Final Scores</h2>
+      <ol id="scoreboard-list" class="scoreboard-list"></ol>
+      <button id="btn-play-again" class="btn btn-primary hidden">Play Again</button>
+    </div>
+
+  </div>
+
+  <script src="../packages/web-client/dist/spec-bridge.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

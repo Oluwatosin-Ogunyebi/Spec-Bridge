@@ -1,0 +1,19 @@
+{
+  "name": "@spec-bridge/web-client",
+  "version": "0.1.0",
+  "description": "Browser client for spec-bridge — connect phones/tablets to Snap Spectacles experiences.",
+  "main": "dist/spec-bridge.min.js",
+  "types": "src/spec-bridge.ts",
+  "scripts": {
+    "build": "esbuild src/spec-bridge.ts --bundle --minify --format=iife --global-name=SpecBridgeLib --outfile=dist/spec-bridge.min.js",
+    "dev": "esbuild src/spec-bridge.ts --bundle --format=iife --global-name=SpecBridgeLib --outfile=dist/spec-bridge.js --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiingot/spec-bridge"
+  }
+}
