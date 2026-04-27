@@ -14,7 +14,7 @@
 
 import { BridgeConfig, BridgeMessage } from './types';
 
-const DEFAULT_RELAY_URL = 'wss://spec-bridge-relay.up.railway.app';
+const DEFAULT_RELAY_URL = 'wss://spec-bridge-production.up.railway.app';
 const RECONNECT_DELAY_MS = 2000;
 const MAX_RECONNECT_ATTEMPTS = 5;
 
